@@ -1,21 +1,35 @@
 # Module 12 Report Template
 
 ## Overview of the Analysis
+The purpose of this analysis is to train and evaluate a model based on loan risk.
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The dataset contains information about historical lending activity from a peer-to-peer lending services company. The aim is to build a model that can identify the creditworthiness of borrowers. 
+The model will learn from the variables: `loan_size`, `interest_rate`, `borrower_income`, `debt_to_income`, `num_accounts`, `derogatory_marks`, `total_debt` and `loan_status`. Afterwards, it will be tested to predict the variable `loan_status`, to find out if the borrower has a healthy loan (represented as 0), or a high-risk loan (represented as 1)
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+* Stages of this machine learning process: 
+* Data was split into Training Set and Testing Set:
+    - The .csv data from the Resources folder is read into Pandas DataFrame.
+    - Create a set from `loan_status(y)` and create a `features(X)` DataFrame with the remaining columns.
+    - Using the command `train_test_split`, split the data into Training and Testing Sets.
+    
+    
+    
+* A `LogisticRegression` model was created:
+    - Fit the model using Training Set.
+    - Score the model:
+        > Training Data Score: 0.9921240885954051
+    - Make predicitions using the Testing Set and the trained model
+    - Score the model:
+        > Testing Data Score: 0.9918489475856377  
+        
+* A confusion matrix is generated and the classification report for the model is printed:
+
+    
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+* Machine Learning Model:
+  * Accuracy: The model  , Precision, and Recall scores.
 
 
 
